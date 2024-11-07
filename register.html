@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar</title>
+    <style>
+        /* Simple inline styles for the login page */
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #e9f5ec;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #37966f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #2d7a5e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Dafftar</h2>
+        <form id="DaftarForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Daftar</button>
+        </form>
+        <p>Sudah Punya akun? <a href="login.html">Masuk di sini</a></p>
+    </div>
+
+    <!-- JavaScript to handle login and redirect -->
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting traditionally
+
+            // Credentials check with both username and password as "admin123"
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "admin123" && password === "admin123") {
+                // Redirect to the dashboard if credentials are correct
+                alert("Login berhasil!");
+                window.location.href = "dashboard.html"; // Redirect to dashboard page
+            } else {
+                // Show an error message if credentials are incorrect
+                alert("Username atau password salah.");
+            }
+        });
+    </script>
+</body>
+
+</html>
